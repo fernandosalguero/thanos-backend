@@ -18,6 +18,10 @@ export class AuthEntity {
     @Column()
     rol: string
 
+    @Column()
+    lider: string
 
+    @Column()
+    jefe: string
 
 }
