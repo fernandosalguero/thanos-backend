@@ -25,7 +25,7 @@ export class TimeEntity {
     horaDesconeccion: string;
 
     @Column()
-    fecha: number;
+    fecha: string;
 
     @Column()
     motivo: number;

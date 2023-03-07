@@ -4,7 +4,7 @@ export class UpdateArchivoDTO implements Iterable<[string, any]> {
     extencion: number;
     horaAcceso: string;
     horaDesconeccion: string;
-    fecha: number;
+    fecha: string;
     motivo: number;
     Skill1: number;
     Skill2: number;
