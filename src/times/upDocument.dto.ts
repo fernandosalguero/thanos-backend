@@ -1,4 +1,19 @@
-export class UpdateArchivoDTO {
+export class UpdateArchivoDTO implements Iterable<any> {
+    [Symbol.iterator](): Iterator<any> {
+        const values = Object.values(this);
+        let index = 0;
+
+        return {
+            next: (): IteratorResult<any> => {
+                if (index < values.length) {
+                    return { done: false, value: values[index++] };
+                } else {
+                    return { done: true, value: null };
+                }
+            },
+        };
+    }
+
     agente: string;
     avayaID: number;
     extencion: number;

@@ -12,12 +12,7 @@ export class TimesService {
         @InjectRepository(TimeEntity) private timeRepository: Repository<TimeEntity>,
         ){}
     
-  // async cargarTiemposAvaya(archivoCargado: UpdateArchivoDTO[]) {
-  //   const newArchivo = this.timeRepository.create(archivoCargado);
-  //   return this.timeRepository.save(newArchivo)
-  // }
-
-  async cargarTiemposAvaya(archivoCargado: UpdateArchivoDTO[]){
+   async cargarTiemposAvaya(archivoCargado: UpdateArchivoDTO[]){
     for (const obj of archivoCargado) {
       const myObject = new UpdateArchivoDTO();
       myObject.agente = obj.agente;
@@ -48,3 +43,6 @@ export class TimesService {
   }
  
 }
+
+
+
