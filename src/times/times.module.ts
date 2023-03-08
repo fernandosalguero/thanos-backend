@@ -1,14 +1,14 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { TimesController } from "./times.controller";
-import { TimeEntity } from "./times.entity";
-import { TimesService } from "./times.service";
+import { AvayaController } from "./avaya.controller";
+import { AvayaEntity } from "./avaya.entity";
+import { AvayaService } from "./avaya.service";
 
 
 @Module({
-    imports: [TypeOrmModule.forFeature([TimeEntity])],
-    controllers: [TimesController],
-    providers: [TimesService],
+    imports: [TypeOrmModule.forFeature([AvayaEntity])],
+    controllers: [AvayaController],
+    providers: [AvayaService],
     exports: []
 })
 

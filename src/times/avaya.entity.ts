@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity({ name: 'times' })
-export class TimeEntity {
+export class AvayaEntity {
 
     @PrimaryGeneratedColumn()
     id: number
@@ -13,16 +13,16 @@ export class TimeEntity {
     agente: string;
 
     @Column()
-    avayaID: number;
+    avayaid: number;
 
     @Column()
     extencion: number;
 
     @Column()
-    horaAcceso: string;
+    horaacceso: string;
 
     @Column()
-    horaDesconeccion: string;
+    horadesconeccion: string;
 
     @Column()
     fecha: string;
@@ -31,48 +31,48 @@ export class TimeEntity {
     motivo: number;
 
     @Column()
-    Skill1: number;
+    skill1: number;
 
     @Column()
-    Skill2: number;
+    skill2: number;
 
     @Column()
-    Skill3: number;
+    skill3: number;
 
     @Column()
-    Skill4: number;
+    skill4: number;
 
     @Column()
-    Skill5: number;
+    skill5: number;
 
     @Column()
-    Skill6: number;
+    skill6: number;
 
     @Column()
-    Skill7: number;
+    skill7: number;
 
     @Column()
-    Skill8: number;
+    skill8: number;
 
     @Column()
-    Skill9: number;
+    skill9: number;
 
     @Column()
-    Skill10: number;
+    skill10: number;
 
     @Column()
-    Skill11: number;
+    skill11: number;
 
     @Column()
-    Skill12: number;
+    skill12: number;
 
     @Column()
-    Skill13: number;
+    skill13: number;
 
     @Column()
-    Skill14: number;
+    skill14: number;
 
     @Column()
-    Skill15: number;
+    skill15: number;
 
 }
