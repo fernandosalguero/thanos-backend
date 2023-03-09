@@ -9,70 +9,70 @@ export class AvayaEntity {
     @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
     fechaCargaArchivo: Date
 
-    @Column()
+    @Column(  )
     agente: string;
 
-    @Column()
+    @Column( )
     avayaid: number;
 
-    @Column()
+    @Column( )
     extencion: number;
 
-    @Column()
+    @Column( )
     horaacceso: string;
 
-    @Column()
+    @Column( )
     horadesconeccion: string;
 
-    @Column()
+    @Column( )
     fecha: string;
 
-    @Column()
+    @Column( )
     motivo: number;
 
-    @Column()
+    @Column( )
     skill1: number;
 
-    @Column()
+    @Column( )
     skill2: number;
 
-    @Column()
+    @Column( )
     skill3: number;
 
-    @Column()
+    @Column( )
     skill4: number;
 
-    @Column()
+    @Column( )
     skill5: number;
 
-    @Column()
+    @Column( )
     skill6: number;
 
-    @Column()
+    @Column( )
     skill7: number;
 
-    @Column()
+    @Column( )
     skill8: number;
 
-    @Column()
+    @Column( )
     skill9: number;
 
-    @Column()
+    @Column( )
     skill10: number;
 
-    @Column()
+    @Column( )
     skill11: number;
 
-    @Column()
+    @Column( )
     skill12: number;
 
-    @Column()
+    @Column( )
     skill13: number;
 
     @Column()
     skill14: number;
 
-    @Column()
+    @Column( )
     skill15: number;
 
 }
