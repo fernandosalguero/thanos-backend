@@ -7,32 +7,35 @@ import { hash, compare } from 'bcrypt'
 import { LoginAuthDto } from './dto/login-auth.dto';
 import { JwtService } from '@nestjs/jwt';
 
+
 @Injectable()
 export class AuthService {
 
   constructor(
     @InjectRepository(AuthEntity) private readonly registroUsuario: Repository<AuthEntity>,
     private jwtService: JwtService
-  ) { }
-
-
-  async register(registerAuthDto: RegisterAuthDto) {
-    const userExist = await this.registroUsuario.findOne({
-      where: {
-        dni: registerAuthDto.dni
+    ) { }
+    
+    
+    async register(registerAuthDto: RegisterAuthDto) {
+      const userExist = await this.registroUsuario.findOne({
+        where: {
+          dni: registerAuthDto.dni
+        }
+      })
+      
+      if (userExist) {
+        console.log(userExist);
+        return new HttpException('DNI existente, intenta con otro dni', 400);
+      } else {
+        const { password } = registerAuthDto;
+        const plainToHash = await hash(password, 9);
+        registerAuthDto = { ...registerAuthDto, password: plainToHash };
+        const newRegistro = this.registroUsuario.create(registerAuthDto)
+        console.log(newRegistro);
+        return this.registroUsuario.save(newRegistro)
       }
-    })
-
-    if (userExist) {
-      return new HttpException('DNI existente, intenta con otro dni', HttpStatus.CONFLICT);
-    } else {
-      const { password } = registerAuthDto;
-      const plainToHash = await hash(password, 9);
-      registerAuthDto = { ...registerAuthDto, password: plainToHash };
-      const newRegistro = this.registroUsuario.create(registerAuthDto)
-      return this.registroUsuario.save(newRegistro)
-
-    }
+    
   }
 
   async login(loginAuthDto: LoginAuthDto) {
@@ -57,10 +60,14 @@ export class AuthService {
       user: findUser,
       token,
     }
-    return data;
+     return data;
 
   }
 
+
+  mostrarAgente(){
+    return this.registroUsuario.find()
+  }
 
 }
 

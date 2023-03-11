@@ -24,4 +24,7 @@ export class AuthEntity {
     @Column()
     jefe: string
 
+    @Column()
+    avayaid: number
+
 }

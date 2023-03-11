@@ -55,6 +55,10 @@ export class AvayaService {
 
 
  }
+
+ getTablaFront(){
+  return this.avayaRepo.find()
+ }
 }
 
 

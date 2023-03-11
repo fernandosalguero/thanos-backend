@@ -4,5 +4,6 @@ export class RegisterAuthDto {
     rol: string;
     lider: string;
     jefe: string;
+    avayaid: number;
 
 }

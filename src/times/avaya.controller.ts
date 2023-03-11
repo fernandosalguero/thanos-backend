@@ -1,7 +1,6 @@
-import { Body, Controller, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { AvayaEntity } from './avaya.entity';
 import { AvayaService } from './avaya.service';
-import { avayaDTO } from './avayaDTO';
 
 @Controller('times')
 export class AvayaController {
@@ -19,5 +18,9 @@ export class AvayaController {
         return this.avayaService.create(avayaFront)
     }
 
+    @Get()
+    mostrarTablaFront(){
+        return this.avayaService.getTablaFront()
+    }
 
 }
