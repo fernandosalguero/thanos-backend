@@ -69,5 +69,11 @@ export class AuthService {
     return this.registroUsuario.find()
   }
 
+
+  eliminarAgente(id: number){
+    return this.registroUsuario.delete({id : id})
+  }
+
+
 }
 

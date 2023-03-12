@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Header } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Header, ParseIntPipe } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginAuthDto } from './dto/login-auth.dto';
 import { RegisterAuthDto } from './dto/register-auth.dto';
@@ -24,5 +24,8 @@ export class AuthController {
     return this.authService.login(loginAuthDto);
   }
 
-
+  @Delete(':id')
+  deleteUser (@Param ('id', ParseIntPipe) id: number){
+    return this.authService.eliminarAgente(id)
+  }
 }
